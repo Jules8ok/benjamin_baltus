@@ -1,0 +1,365 @@
+// Place all the styles related to the page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url("components/avatar.css");
+@import url("components/banner.css");
+@import url("components/footer.css");
+@import url("components/card.css");
+@import url("components/feature.css");
+
+body {
+  margin: 0;
+  font-family: Open-sans, sans-serif;
+}
+h1, h2, h3 {
+  font-family: Raleway, Helvetica, sans-serif;
+}
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+.padded {
+  padding: 100px 0;
+}
+.wrapper-grey {
+  background: #F4F4F4;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url('http://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url(http://fonts.googleapis.com/css?family=Raleway:100,300,400,700);
+
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css');
+
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #666;
+}
+
+/* STRUCTURE */
+
+#pagewrap {
+  padding: 5px;
+  width: 1200px;
+  margin: auto;
+}
+
+
+header {
+  height: 150px;
+  padding: 0 15px;
+}
+
+.header_Absolute_Center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+
+#content {
+  width: 180px;
+  float: left;
+  padding: 5px 15px;
+}
+
+#middle {
+  width: 800px; /* Account for margins + border values */
+  float: left;
+  padding: 5px 15px;
+  Xmargin: 0px 5px 5px 5px;
+}
+
+#sidebar {
+  width: 200px;
+  padding: 5px 15px;
+  float: left;
+}
+
+footer {
+  clear: both;
+  padding: 0 15px;
+  height: 150px;
+  margin: auto;
+  text-align: center;
+}
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+
+  #pagewrap {
+    width: 94%;
+  }
+
+  #content {
+    width: 41%;
+    padding: 1% 4%;
+  }
+
+  #middle {
+    width: 41%;
+    padding: 1% 4%;
+    margin: 0px 0px 5px 5px;
+    float: right;
+  }
+
+  #sidebar {
+    clear: both;
+    padding: 1% 4%;
+    width: auto;
+    float: none;
+  }
+
+  header, footer {
+    padding: 1% 4%;
+  }
+}
+
+/* for 700px or less */
+@media screen and (max-width: 600px) {
+
+  #content {
+    width: auto;
+    float: none;
+  }
+
+  #middle {
+    width: auto;
+    float: none;
+    margin-left: 0px;
+  }
+
+  #sidebar {
+    width: auto;
+    float: none;
+  }
+
+}
+
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+
+  header {
+    height: auto;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  #sidebar {
+    display: none;
+  }
+
+}
+
+
+#content {
+  Xbackground: #f8f8f8;
+}
+#sidebar {
+  Xbackground: #f0efef;
+}
+header, #content, #middle, #sidebar {
+  Xmargin-bottom: 5px;
+}
+
+#pagewrap, header, #content, #middle, #sidebar, footer {
+  Xborder: solid 1px #ccc;
+}
+
+
+
+
+/* NAVIGATION - VERTICAL MENU ---------------------------------------------*/
+
+.navbar_wrap {
+  xfont-family: 'Raleway', sans-serif;
+  font-size: 12px;
+}
+
+.navbar_wrap ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+}
+
+.navbar_wrap li {
+  Xborder-bottom: 1px solid #eee;
+  text-transform: uppercase;
+}
+
+.navbar_wrap li a {
+  text-decoration: none;
+  Xbackground-color: #03AEDA;
+  color: #666;
+  padding: 5px 10px;
+  Xfont-size: 14px;
+  display: block;
+  transition: margin-left .29s ease;
+}
+
+.navbar_wrap li a:hover {
+  background-color: #e8e2d5;
+  margin-left: 10px;
+}
+
+/* END NAVIGATION - VERTICAL MENU ---------------------------------------------*/
+
+
+/* SEARCH BAR*************************/
+
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  padding: 5px;
+  height: 20px;
+  xborder-radius: 5px;
+  outline: none;
+  xcolor: #9DBFAF;
+  xbackground-color: transparent;
+  xborder: 0px solid;
+  xborder: 1px solid transparent;
+
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #e8e2d5;
+}
+
+.searchTerm:focus {
+  color: #000;
+}
+
+.searchButton {
+  position: absolute;
+  right: -50px;
+  width: 40px;
+  height: 32px;
+  border: 1px solid #e8e2d5;
+  background: #e8e2d5;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+/*Resize the wrap to see the search bar change!*/
+.wrap1 {
+  width: 90%;
+  Xposition: absolute;
+  Xtop: 50%;
+  Xleft: 50%;
+  Xtransform: translate(-50%, -50%);
+}
+/* END SEARCH BAR*************************/
+
+
+/* CAROUSEL ---------------------------------------------*/
+
+.slide {
+  Xmargin-top: 30px;
+}
+
+.details {
+  Xmargin: 50px 0;
+}
+
+.details h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.details .back-link {
+  text-align: center;
+}
+
+.details .back-link a {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 15px 30px;
+  background: #333;
+  color: #fff;
+  border-radius: 24px;
+}
+
+.details .back-link a svg {
+  margin-right: 10px;
+  vertical-align: text-top;
+  display: inline-block;
+}
+
+
+/* END CAROUSEL ---------------------------------------------*/
+
+
+
+/*=========================
+  SOCIAL NETWORK ICON FOOTER -- Icons
+ ================= */
+
+
+/*  ---------------------------------------------*/
+
+.socialbtns a,
+a:hover {
+  text-decoration: none;
+}
+
+.socialbtns,
+.socialbtns ul,
+.socialbtns li {
+  margin: 0;
+  padding: 5px;
+}
+
+.socialbtns li {
+  list-style: none outside none;
+  display: inline-block;
+}
+
+.socialbtns .fa {
+  width: 28px;
+  height: 28px;
+  color: #bfbfbf;
+  background-color: #FFF;
+  border: 1px solid #bfbfbf;
+  padding-top: 6px;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.socialbtns .fa:hover {
+  color: #FFF;
+  background-color: #000;
+  border: 1px solid #000;
+}
+
+.container12 {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+}
+/* ENDSOCIAL NETWORK ICON FOOTER ---------------------------------------------*/
