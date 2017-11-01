@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wedding.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @wedding.description %>
+</p>
+
+<%= link_to 'Edit', edit_wedding_path(@wedding) %> |
+<%= link_to 'Back', weddings_path %>
+
+
+<%= cl_image_tag @wedding.photo, height: 300, width: 400, crop: :fill %>

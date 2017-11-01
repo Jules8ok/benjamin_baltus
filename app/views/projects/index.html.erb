@@ -53,21 +53,21 @@
 
 
 
-          <% @products.each do |product| %>
+          <% @projects.each do |project| %>
 
           <div class="item">
 
             <tr>
-             <td><%= cl_image_tag product.photo %></td>
+             <td><%= cl_image_tag project.photo %></td>
              <br>
-             <td><%= link_to 'Show', product %></td>
-             <td><%= link_to 'Edit', edit_product_path(product) %></td>
-             <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+             <td><%= link_to 'Show', project %></td>
+             <td><%= link_to 'Edit', edit_project_path(project) %></td>
+             <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
            </tr>
          </div>
          <% end %>
          <br>
-         <%= link_to 'New Photo architecture', new_product_path %>
+         <%= link_to 'New Photo architecture', new_project_path %>
        </div>
      </div>
 
