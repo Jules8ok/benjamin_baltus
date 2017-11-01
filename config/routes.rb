@@ -13,6 +13,7 @@ get 'projects', to: 'page#projects'
 get 'dysphoria', to: 'page#dysphoria'
 get 'contact', to: 'page#contact'
 get 'mise_en_conformite', to: 'page#mise_en_conformite'
+get 'administration', to: 'page#administration'
 
 
 end

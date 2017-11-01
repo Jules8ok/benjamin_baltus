@@ -1,5 +1,5 @@
 class PageController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:architecture, :people, :weddings, :mise_en_conformite, :projects, :contact, :homepage ]
+  skip_before_action :authenticate_user!, only: [:architecture, :people, :weddings, :mise_en_conformite, :projects, :contact, :homepage, :dysphoria ]
 
   def homepage
   end
@@ -23,5 +23,9 @@ class PageController < ApplicationController
   end
 
   def contact
+  end
+
+  def administration
+
   end
 end
