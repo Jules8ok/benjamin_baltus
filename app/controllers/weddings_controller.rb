@@ -1,6 +1,6 @@
 class WeddingsController < ApplicationController
   before_action :set_wedding, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!
   # GET /weddings
   # GET /weddings.json
   def index

@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!
   # GET /people
   # GET /people.json
   def index

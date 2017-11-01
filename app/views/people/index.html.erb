@@ -59,15 +59,19 @@
 
             <tr>
              <td><%= cl_image_tag person.photo %></td>
+             <% if !current_user.nil? and current_user.admin?  %>
              <br>
              <td><%= link_to 'Show', person %></td>
              <td><%= link_to 'Edit', edit_person_path(person) %></td>
              <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+             <% end %>
            </tr>
          </div>
          <% end %>
+         <% if !current_user.nil? and current_user.admin?  %>
          <br>
          <%= link_to 'New Photo people', new_person_path %>
+         <% end %>
        </div>
      </div>
 
@@ -78,10 +82,8 @@
         <div class="row">
           <div class="col-xs-4">
             <ul class="list-inline">
-              <li><a href=""><i class="fa fa-youtube"></i></a></li>
               <li><a href="https://www.instagram.com/benbaltus/"><i class="fa fa-instagram"></i></a></li>
               <li><a href="https://www.facebook.com/benjamingary.baltus/photos_all"><i class="fa fa-facebook"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter"></i></a></li>
             </ul>
           </div>
           <div class="col-xs-8 text-right">
