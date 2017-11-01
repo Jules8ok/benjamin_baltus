@@ -1,4 +1,5 @@
 class PageController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:architecture, :people, :weddings, :mise_en_conformite, :projects, :contact, :homepage ]
 
   def homepage
   end
