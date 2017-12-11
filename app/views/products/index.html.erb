@@ -35,8 +35,7 @@
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <% if !current_user.nil? %>
-          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+
           <% else %>
           <%= image_tag "http://www.pi-cube.com/wp-content/uploads/2015/04/team-placeholder.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% end %>
@@ -89,7 +88,7 @@
       <div class="1">
         <br>
         <nav>
-          <section id="content">
+          <section id="content" class="content13">
             <div class="navbar_wrap">
               COLLECTIONS
               <ul class="boxx">
@@ -104,6 +103,9 @@
             </div>
           </section>
         </nav>
+      </div>
+
+      <div class= "content1 "   style="float: left;padding: 5px 15px;">
       </div>
 
 
@@ -169,21 +171,24 @@
 
      //>=, not <=
      if (scroll >= x) {
-        //clearHeader, not clearheader - caps H
-        $(".navbar-wagon").addClass("navfixe");
-        $(".navbar-wagon").removeClass("navhide");
-      }
+      $(".navbar-wagon").addClass("navfixe");
+      $(".navbar-wagon").removeClass("navhide");
+      $("#content").addClass("navfixe1");
+      $(".content1").addClass("navfixe2");
+    }
 
-      if (scroll < x) {
-        //clearHeader, not clearheader - caps H
-        $(".navbar-wagon").removeClass("navfixe");
-        $(".navbar-wagon").addClass("navhide");
-      }
-    });
+    if (scroll < x) {
+      $(".navbar-wagon").removeClass("navfixe");
+      $(".navbar-wagon").addClass("navhide");
+      $("#content").removeClass("navfixe1");
+      $(".content1").removeClass("navfixe2");
+    }
+  });
 
 
-  </script>
-  </html>
+
+</script>
+</html>
 
 
 
