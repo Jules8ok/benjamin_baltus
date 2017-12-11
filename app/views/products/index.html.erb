@@ -17,13 +17,73 @@
   </head>
 
   <body>
-    <div class="banner" style="background: url('http://res.cloudinary.com/dxdqe1twn/image/upload/v1508248381/Accueil_gftfls.jpg');">
-      <div class="banner-content">
-        <h1></h1>
-        <p></p>
+   <div class="navbar-wagon1">
+    <!-- Logo -->
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logoben.jpg", alt: "Logo", width: 64, height: 64 %>
+    <% end %>
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <% if user_signed_in? %>
+
+
+      <!-- Links when logged in -->
+
+      <!-- Avatar with dropdown menu -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <% if !current_user.nil? %>
+          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+          <% else %>
+          <%= image_tag "http://www.pi-cube.com/wp-content/uploads/2015/04/team-placeholder.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% end %>
+
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to "#" do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+              <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <% else %>
+
+      <!-- Login link (when logged out) -->
+
+      <% end %>
+    </div>
+
+    <!-- Dropdown list appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="/pages/prices">Prices</a></li>
+          <li><a href="/pages/converter">Converter</a></li>
+          <li><a href="/pages/tutorial">Buy bitcoin</a></li>
+          <li><a href="/pages/wallet">Wallet</a></li>
+          <li>              <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <% end %></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <h2>Benjamin Baltus</h2>
+
     <div class="container12" >
 
       <div class="1">
@@ -69,7 +129,7 @@
          <% end %>
          <br>
          <% if !current_user.nil? and current_user.admin? %>
-           <%= link_to 'New Photo architecture', new_product_path %>
+         <%= link_to 'New Photo architecture', new_product_path %>
          <% end %>
 
        </div>
@@ -100,6 +160,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
+  <script type="text/javascript">
+
+
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+      var x = $(window).height();
+
+     //>=, not <=
+     if (scroll >= x) {
+        //clearHeader, not clearheader - caps H
+        $(".navbar-wagon").addClass("navfixe");
+        $(".navbar-wagon").removeClass("navhide");
+      }
+
+      if (scroll < x) {
+        //clearHeader, not clearheader - caps H
+        $(".navbar-wagon").removeClass("navfixe");
+        $(".navbar-wagon").addClass("navhide");
+      }
+    });
+
+
+  </script>
   </html>
 
 
