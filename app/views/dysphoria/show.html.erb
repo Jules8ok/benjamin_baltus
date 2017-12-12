@@ -1,0 +1,18 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dysphorium.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @dysphorium.description %>
+</p>
+
+<%= link_to 'Edit', edit_dysphorium_path(@dysphorium) %> |
+<%= link_to 'Back', dysphoria_path %>
+
+
+<%= cl_image_tag @dysphorium.photo, height: 300, width: 400, crop: :fill %>

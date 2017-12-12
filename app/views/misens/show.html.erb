@@ -1,0 +1,18 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @misen.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @misen.description %>
+</p>
+
+<%= link_to 'Edit', edit_misen_path(@misen) %> |
+<%= link_to 'Back', misens_path %>
+
+
+<%= cl_image_tag @misen.photo, height: 300, width: 400, crop: :fill %>

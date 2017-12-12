@@ -114,60 +114,68 @@
 
 
 
-          <% @weddings.each do |wedding| %>
+          <% @misens.each do |misen| %>
 
           <div class="item">
 
             <tr>
-             <td><%= cl_image_tag wedding.photo %></td>
-             <% if !current_user.nil? and current_user.admin?  %>
-             <br>
-             <td><%= link_to 'Show', wedding %></td>
-             <td><%= link_to 'Edit', edit_wedding_path(wedding) %></td>
-             <td><%= link_to 'Destroy', wedding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-             <% end %>
-           </tr>
-         </div>
-         <% end %>
-         <br>
-         <% if !current_user.nil? and current_user.admin? %>
-         <%= link_to 'New Photo architecture', new_wedding_path %>
-         <% end %>
-
-       </div>
-     </div>
-
-     <p id="notice"><%= notice %></p>
-
-     <div id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-4">
-            <ul class="list-inline">
-              <li><a href="https://www.instagram.com/benbaltus/"><i class="fa fa-instagram"></i></a></li>
-              <li><a href="https://www.facebook.com/benjamingary.baltus/photos_all"><i class="fa fa-facebook"></i></a></li>
-            </ul>
+              <td>
+                <%= cl_image_tag misen.photo %>
+              </td>
+              <% if !current_user.nil? and current_user.admin?  %>
+              <br>
+              <td>
+                <%= link_to 'Show', misen %>
+              </td>
+              <td>
+                <%= link_to 'Edit', edit_misen_path(misen) %>
+              </td>
+              <td>
+                <%= link_to 'Destroy', misen, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+              <% end %>
+            </tr>
           </div>
-          <div class="col-xs-8 text-right">
-            <p>Website by Jules Wittock<a class="point" href="administration">.</a></p>
+          <% end %>
+          <br>
+          <% if !current_user.nil? and current_user.admin? %>
+          <%= link_to 'New Photo mise en conformité', new_misen_path %>
+          <% end %>
+
+        </div>
+      </div>
+
+      <p id="notice"><%= notice %></p>
+
+      <div id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4">
+              <ul class="list-inline">
+                <li><a href="https://www.instagram.com/benbaltus/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.facebook.com/benjamingary.baltus/photos_all"><i class="fa fa-facebook"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-xs-8 text-right">
+              <p>Website by Jules Wittock<a class="point" href="administration">.</a></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
 
 
 
-    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  </body>
-  <script type="text/javascript">
+      <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </body>
+    <script type="text/javascript">
 
 
-    $(window).scroll(function() {
-      var scroll = $(window).scrollTop();
-      var x = $(window).height();
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        var x = $(window).height();
 
      //>=, not <=
      if (scroll >= x) {

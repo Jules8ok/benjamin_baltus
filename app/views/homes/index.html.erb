@@ -114,24 +114,24 @@
 
 
 
-          <% @weddings.each do |wedding| %>
+          <% @homes.each do |home| %>
 
           <div class="item">
 
             <tr>
-             <td><%= cl_image_tag wedding.photo %></td>
+             <td><%= cl_image_tag home.photo %></td>
              <% if !current_user.nil? and current_user.admin?  %>
              <br>
-             <td><%= link_to 'Show', wedding %></td>
-             <td><%= link_to 'Edit', edit_wedding_path(wedding) %></td>
-             <td><%= link_to 'Destroy', wedding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+             <td><%= link_to 'Show', home %></td>
+             <td><%= link_to 'Edit', edit_home_path(home) %></td>
+             <td><%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
              <% end %>
            </tr>
          </div>
          <% end %>
          <br>
          <% if !current_user.nil? and current_user.admin? %>
-         <%= link_to 'New Photo architecture', new_wedding_path %>
+         <%= link_to 'New Photo homes', new_home_path %>
          <% end %>
 
        </div>

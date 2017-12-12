@@ -1,0 +1,18 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @home.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @home.description %>
+</p>
+
+<%= link_to 'Edit', edit_home_path(@home) %> |
+<%= link_to 'Back', homes_path %>
+
+
+<%= cl_image_tag @home.photo, height: 300, width: 400, crop: :fill %>
